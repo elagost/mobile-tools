@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+yad --form --width 300 \
+--text="Inhibit for:" \
+--field="5 minutes":fbtn "gnome-session-inhibit --reason cafe5 inhibit 5" \
+--field="10 minutes":fbtn "gnome-session-inhibit --reason cafe10 inhibit 10" \
+--field="60 minutes":fbtn "gnome-session-inhibit --reason cafe60 inhibit 60" \
+--field="Indefinitely":fbtn "gnome-session-inhibit --reason cafe∞ --inhibit-only" \
+--field="Kill 'em all":fbtn "killall gnome-session-inhibit; killall inhibit" \
+--text="$(gnome-session-inhibit -l)" \
+--button=yad-cancel:1 \
+
+foo=$?
+
+[[ $foo -eq 1 ]] && exit 0
+
+if [[ $foo -eq 2 ]]; then
+    inhibit 5 && exit 0
+elif [[ $foo -eq 3 ]]; then
+    inhibit 10 && exit 0
+elif [[ $foo -eq 4 ]]; then
+    inhibit 60 && exit 0
+else
+    gnome-session-inhibit --inhibit-only && exit 0
+fi

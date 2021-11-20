@@ -1,0 +1,25 @@
+[Desktop Entry]
+Version=1.0
+Keywords=shell;prompt;command;commandline;cmd;
+#Exec=kgx -e "gnome-session-inhibit --inhibit-only --reason cafe-inf --app-id cafe-inf"
+Exec=/home/adam/bin/cafe
+Name=Cafe
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=System;TerminalEmulator
+Icon=media-playback-pause
+X-Purism-FormFactor=Workstation;Mobile;
+
+Actions=5m;10m;60m;
+
+[Desktop Action 5m]
+Name=inhibit 5 minutes
+Exec=kgx -e "gnome-session-inhibit --reason cafe5 --app-id cafe5 /home/adam/bin/inhibit 5"
+[Desktop Action 10m]
+Name=inhibit 10 minutes
+Exec=kgx -e "gnome-session-inhibit --reason cafe10 --app-id cafe10 /home/adam/bin/inhibit 10"
+[Desktop Action 60m]
+Name=inhibit 60 minutes
+Exec=kgx -e "gnome-session-inhibit --reason cafe60 --app-id cafe60 /home/adam/bin/inhibit 60"
+

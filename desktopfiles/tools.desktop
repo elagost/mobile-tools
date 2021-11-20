@@ -1,0 +1,32 @@
+[Desktop Entry]
+Version=1.0
+Keywords=shell;prompt;command;commandline;cmd;
+Exec=kgx -e "gnome-session-inhibit --inhibit-only --reason cafe-inf --app-id cafe-inf"
+Name=Adam's Tools
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=System;TerminalEmulator
+Icon=gnome-tweaks
+X-Purism-FormFactor=Workstation;Mobile;
+
+Actions=thunar;nheko;signal;telegram;gkill;gamma;
+
+[Desktop Action thunar]
+Name=Thunar
+Exec=thunar
+[Desktop Action telegram]
+Name=Telegram
+Exec=flatpak run org.telegram.desktop
+[Desktop Action nheko]
+Name=Nheko
+Exec=flatpak run io.github.NhekoReborn.Nheko
+[Desktop Action signal]
+Name=Signal-Desktop
+Exec=/home/adam/bin/signal.sh
+[Desktop Action gamma]
+Name=gammastep
+Exec=bash -c "pkill gammastep;sleep 2s;gammastep"
+[Desktop Action gkill]
+Name=Stop Geary
+Exec=pkill geary

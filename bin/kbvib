@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+PROFILE=$(gsettings get org.sigxcpu.feedbackd.application:/org/sigxcpu/feedbackd/application/sm-puri-squeekboard/ profile)
+if [[ "${PROFILE}" == "'silent'" ]];then
+    echo "kbvib on"
+    gsettings set org.sigxcpu.feedbackd.application:/org/sigxcpu/feedbackd/application/sm-puri-squeekboard/ profile quiet
+elif [[ "${PROFILE}" == "'quiet'" ]];then
+    echo "kbvib off"
+    gsettings set org.sigxcpu.feedbackd.application:/org/sigxcpu/feedbackd/application/sm-puri-squeekboard/ profile silent
+else
+    echo "?? kbvib off"
+    gsettings set org.sigxcpu.feedbackd.application:/org/sigxcpu/feedbackd/application/sm-puri-squeekboard/ profile silent
+fi 
