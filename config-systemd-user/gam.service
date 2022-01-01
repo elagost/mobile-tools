@@ -1,0 +1,9 @@
+[Unit]
+Description=gammastep
+
+[Service]
+ExecStart=bash -c "sleep 10;gammastep"
+ExecStop=pkill gammastep
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,4 @@
+[Unit]
+Description=Silent profile at night
+[Service]
+ExecStart=bash -c "/home/adam/bin/profile-swap store; gsettings set org.sigxcpu.feedbackd profile 'silent'"

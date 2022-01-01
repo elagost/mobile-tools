@@ -1,0 +1,7 @@
+[Unit]
+Description=Turn on silent profile
+[Timer]
+Persistent=true
+OnCalendar=*-*-* 20:00:00
+[Install]
+WantedBy=timers.target

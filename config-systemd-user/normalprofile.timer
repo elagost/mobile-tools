@@ -1,0 +1,7 @@
+[Unit]
+Description=Turn on normal profile
+[Timer]
+Persistent=true
+OnCalendar=*-*-* 6:30:00
+[Install]
+WantedBy=timers.target

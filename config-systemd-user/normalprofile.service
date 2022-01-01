@@ -1,0 +1,4 @@
+[Unit]
+Description=User Wake Up Action
+[Service]
+ExecStart=/home/adam/bin/profile-swap restore
